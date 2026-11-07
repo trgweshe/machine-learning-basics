@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ardent Light — Photography</title>
+  <meta name="description" content="Landscape, street and portrait photography. Prints, commissions and workshops.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top">Ardent<span>Light</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="nav-cta">Book a shoot</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Featured photograph">
+      <div class="hero-slides" id="heroSlides"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Landscape · Street · Portrait</p>
+        <h1>Light, waited for.</h1>
+        <p class="lede">Photographs made slowly — at first light, in passing rain, in the quiet minute before a city wakes.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">View the work</a>
+          <a href="#contact" class="btn btn-ghost">Commission a shoot</a>
+        </div>
+      </div>
+      <div class="hero-caption" id="heroCaption" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>Portfolio</h2>
+        </div>
+        <div class="filters" role="tablist" aria-label="Filter photographs">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter" data-filter="landscape" role="tab" aria-selected="false">Landscape</button>
+          <button class="filter" data-filter="urban" role="tab" aria-selected="false">Urban</button>
+          <button class="filter" data-filter="nature" role="tab" aria-selected="false">Nature</button>
+          <button class="filter" data-filter="portrait" role="tab" aria-selected="false">Still life</button>
+        </div>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-media">
+        <img src="https://picsum.photos/id/1036/900/1100" alt="Snow-covered mountains under a pale sky" loading="lazy">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2>Hi, I'm Alex.</h2>
+        <p>I've spent the last decade chasing weather across coastlines, mountain passes and city rooftops. My work is about patience: arriving early, staying late, and letting the scene decide when it's ready.</p>
+        <p>Alongside personal projects I shoot for travel brands, editorial clients and couples who want something quieter than the usual wedding album.</p>
+        <dl class="stats">
+          <div><dt>Years shooting</dt><dd>10+</dd></div>
+          <div><dt>Countries</dt><dd>24</dd></div>
+          <div><dt>Prints sold</dt><dd>1,800</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Work with me</p>
+          <h2>Services</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Fine-art prints</h3>
+          <p>Archival giclée prints on cotton rag paper, signed and numbered. Editions of 25.</p>
+          <p class="price">from $180</p>
+        </article>
+        <article class="card card-featured">
+          <h3>Portrait sessions</h3>
+          <p>Two hours on location at golden hour, 40+ edited images, private online gallery.</p>
+          <p class="price">from $450</p>
+        </article>
+        <article class="card">
+          <h3>Commercial &amp; editorial</h3>
+          <p>Travel, hospitality and brand stories, with full licensing and fast turnaround.</p>
+          <p class="price">by quote</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's make something.</h2>
+        <p>Tell me a little about what you have in mind. I usually reply within two days.</p>
+        <p class="contact-direct"><a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <label>Name<input name="name" type="text" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>What are you looking for?
+          <select name="topic">
+            <option>Print purchase</option>
+            <option>Portrait session</option>
+            <option>Commercial project</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" rows="5" required></textarea></label>
+        <button class="btn btn-primary" type="submit">Send message</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ardent Light Photography</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous photo">‹</button>
+    <figure>
+      <img id="lbImg" alt="">
+      <figcaption><strong id="lbTitle"></strong><span id="lbMeta"></span><span id="lbCount"></span></figcaption>
+    </figure>
+    <button class="lb-next" aria-label="Next photo">›</button>
+  </div>
+
+  <script src="photos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
